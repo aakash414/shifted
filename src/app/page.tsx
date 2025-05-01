@@ -3,6 +3,7 @@
 import { SchoolSearchForm } from "@/components/SchoolSearchForm";
 import { SchoolCard } from "@/components/SchoolCard";
 import { getFilteredSchools, supabase, School } from "@/lib/supabase";
+import { getRouteForSchool, GeminiRoute } from "@/lib/gemini";
 import { useState } from "react";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
   const [districts, setDistricts] = useState<string[]>([]);
   const [posts, setPosts] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState<School[]>([]);
+  const [results, setResults] = useState<(School & { route?: GeminiRoute | null, routeLoading?: boolean })[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   // Fetch options on mount
@@ -31,11 +32,35 @@ export default function Home() {
     setError(null);
     try {
       const schools = await getFilteredSchools(selectedDistricts, post);
-      setResults(schools);
+      // Only top 10 for Gemini API
+      const topSchools = schools.slice(0, 10);
+      // Set loading state for each card
+      setResults(topSchools.map(s => ({ ...s, routeLoading: true })));
+      // Fetch routes in parallel
+      const routes = await Promise.all(
+        topSchools.map(school =>
+          getRouteForSchool(userLocation, `${school.school}, ${school.district}, Kerala`)
+        )
+      );
+      // Attach routes
+      let schoolsWithRoutes = topSchools.map((school, idx) => ({
+        ...school,
+        route: routes[idx],
+        routeLoading: false
+      }));
+      // Sort by score + time if available
+      schoolsWithRoutes = schoolsWithRoutes.sort((a, b) => {
+        if (!a.route || !b.route) return 0;
+        // Weighted: lower score is worse, lower time is better
+        const parseTime = (t: string) => parseInt(t.split(" ")[0]) || 9999;
+        const aScore = a.route.score * 10 + parseTime(a.route.total_time);
+        const bScore = b.route.score * 10 + parseTime(b.route.total_time);
+        return aScore - bScore;
+      });
+      setResults(schoolsWithRoutes);
     } catch (err: any) {
-      setError(err.message || "Failed to fetch schools");
+      setError(err.message || "Failed to fetch schools/routes");
     }
-    console.log(results, 'resutls')
     setLoading(false);
   }
   return (
@@ -49,7 +74,13 @@ export default function Home() {
       {error && <div className="text-red-500 mt-4">{error}</div>}
       <div className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-6xl">
         {results.map((school, idx) => (
-          <SchoolCard key={school.school + idx} school={school} onSeeRoute={() => { }} />
+          <SchoolCard
+            key={school.school + idx}
+            school={school}
+            route={school.route}
+            routeLoading={school.routeLoading}
+            onSeeRoute={() => {}}
+          />
         ))}
       </div>
     </div>

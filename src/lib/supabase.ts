@@ -19,11 +19,14 @@ export const supabase =
 
 if (process.env.NODE_ENV !== 'production') globalThis.supabase = supabase;
 
-export type School = {
+import type { GeminiRoute } from "@/lib/gemini";
+
+export interface School {
   district: string;
   school: string;
   post: string;
-};
+  geminiRoute?: GeminiRoute;
+}
 
 /**
  * Utility to fetch schools filtered by districts and post.
@@ -41,5 +44,12 @@ export async function getFilteredSchools(
 
   const { data, error } = await query;
   if (error) throw error;
-  return data as School[];
+  // Map each row to School type explicitly
+  return (data as any[]).map(row => ({
+    district: row.district as string,
+    school: row.school as string,
+    post: row.post as string,
+    // Attach optional Gemini route if present (for type compatibility)
+    geminiRoute: row.geminiRoute
+  })) as School[];
 }
