@@ -31,15 +31,40 @@ export function SchoolCard({ school, route, routeLoading, onSeeRoute }: SchoolCa
             className="mt-1"
           >
             <ul className="mt-2 list-disc pl-5 text-xs">
-              {route.instructions.map((step, i) =>
-                <li key={i}>
-                  {typeof step === 'string'
-                    ? step
-                    : (typeof step === 'object' && step !== null && 'instruction' in step)
-                      ? (step as { instruction: string }).instruction
-                      : JSON.stringify(step)}
-                </li>
-              )}
+              {route.instructions.map((step, i) => {
+                if (typeof step === 'string') {
+                  return <li key={i}>{step}</li>;
+                } else if (typeof step === 'object' && step !== null) {
+                  // Pretty-print known fields if present
+                  const {
+                    step: s,
+                    description,
+                    instruction,
+                    walking_time,
+                    waiting_time,
+                    in_vehicle_time,
+                    details,
+                    ...rest
+                  } = step as any;
+                  return (
+                    <li key={i} className="mb-2">
+                      {s !== undefined && <b>Step {s}:</b>} {instruction || description}
+                      <ul className="ml-4 mt-1 list-none">
+                        {walking_time && <li><b>Walking:</b> {walking_time}</li>}
+                        {waiting_time && <li><b>Waiting:</b> {waiting_time}</li>}
+                        {in_vehicle_time && <li><b>In Vehicle:</b> {in_vehicle_time}</li>}
+                        {details && <li><b>Details:</b> {details}</li>}
+                        {/* Show any other fields */}
+                        {Object.entries(rest).map(([k, v]) => (
+                          <li key={k}><b>{k}:</b> {String(v)}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  );
+                } else {
+                  return <li key={i}>{JSON.stringify(step)}</li>;
+                }
+              })}
             </ul>
           </Collapsible>
         </div>

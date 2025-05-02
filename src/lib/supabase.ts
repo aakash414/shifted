@@ -36,11 +36,14 @@ export async function getFilteredSchools(
   districts: string[],
   post: string
 ): Promise<School[]> {
-  const query = supabase
+  let query = supabase
     .from('schools')
     .select('*')
-    .in('district', districts)
     .eq('post', post);
+
+  if (districts.length > 0) {
+    query = query.in('district', districts);
+  }
 
   const { data, error } = await query;
   if (error) throw error;

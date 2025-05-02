@@ -50,6 +50,7 @@ export default function Home() {
     setLoading(true);
     setError(null);
     try {
+      console.log(selectedDistricts, post, userLocation, 'data for handling search')
       const schools = await getFilteredSchools(selectedDistricts, post);
       // Set loading state for each card
       setResults(schools.map(s => ({ ...s, routeLoading: true })));

@@ -1,0 +1,1248 @@
+[
+  {
+    "code": "TCR",
+    "name": "Thrissur",
+    "place": "Trichur",
+    "lat": 10.5160531,
+    "lon": 76.2084506
+  },
+  {
+    "code": "CLT",
+    "name": "Kozhikode Main",
+    "place": "Calicut",
+    "lat": 11.2455615,
+    "lon": 75.780771
+  },
+  {
+    "code": "ERS",
+    "name": "Ernakulam Junction",
+    "place": "Ernakulam",
+    "lat": 9.9706145,
+    "lon": 76.2909707
+  },
+  {
+    "code": "TVC",
+    "name": "Trivandrum Central",
+    "place": "Trivandrum",
+    "lat": 8.4870167,
+    "lon": 76.9526408
+  },
+  {
+    "code": "AWY",
+    "name": "Aluva",
+    "place": "Aluva",
+    "lat": 10.1080369,
+    "lon": 76.3563183
+  },
+  {
+    "code": "QLN",
+    "name": "Kollam Junction",
+    "place": "Kollam",
+    "lat": 8.8862192,
+    "lon": 76.5954829
+  },
+  {
+    "code": "PGT",
+    "name": "Palakkad Junction",
+    "place": "Palghat",
+    "lat": 10.7993322,
+    "lon": 76.6375989
+  },
+  {
+    "code": "KYJ",
+    "name": "Kayamkulam Junction",
+    "place": "Kayamkulam",
+    "lat": 9.1813015,
+    "lon": 76.5121004
+  },
+  {
+    "code": "SRR",
+    "name": "Shoranur Junction",
+    "place": "Shoranur",
+    "lat": 10.7595499,
+    "lon": 76.2719238
+  },
+  {
+    "code": "CAN",
+    "name": "Kannur Main",
+    "place": "Cannanore",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "ERN",
+    "name": "Ernakulam Town",
+    "place": "Ernakulam",
+    "lat": 9.9916561,
+    "lon": 76.2863559
+  },
+  {
+    "code": "KTYM",
+    "name": "Kottayam",
+    "place": "Kottayam",
+    "lat": 9.5948345,
+    "lon": 76.5317478
+  },
+  {
+    "code": "TIR",
+    "name": "Tirur",
+    "place": "Tirur",
+    "lat": 10.9178187,
+    "lon": 75.9217456
+  },
+  {
+    "code": "CNGR",
+    "name": "Chengannur",
+    "place": "Chengannur",
+    "lat": 9.3182808,
+    "lon": 76.6085318
+  },
+  {
+    "code": "TLY",
+    "name": "Thalassery",
+    "place": "Tellicherry",
+    "lat": 11.7537453,
+    "lon": 75.492465
+  },
+  {
+    "code": "BDJ",
+    "name": "Vadakara",
+    "place": "Badagara",
+    "lat": 11.5934137,
+    "lon": 75.5870811
+  },
+  {
+    "code": "ALLP",
+    "name": "Alappuzha",
+    "place": "Alappuzha",
+    "lat": 9.4863293,
+    "lon": 76.3217143
+  },
+  {
+    "code": "TVCN",
+    "name": "Thiruvananthapuram North",
+    "place": "Trivandrum",
+    "lat": 8.4870167,
+    "lon": 76.9526408
+  },
+  {
+    "code": "KGQ",
+    "name": "Kasaragod",
+    "place": "Kasaragod",
+    "lat": 12.4912934,
+    "lon": 74.9876277
+  },
+  {
+    "code": "TRVL",
+    "name": "Tiruvalla",
+    "place": "Tiruvalla",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "PAY",
+    "name": "Payyanur",
+    "place": "Payyanur",
+    "lat": 12.0910795,
+    "lon": 75.1946515
+  },
+  {
+    "code": "KZE",
+    "name": "Kanhangad",
+    "place": "Kanhangad",
+    "lat": 12.4871262,
+    "lon": 74.98974
+  },
+  {
+    "code": "OTP",
+    "name": "Ottappalam",
+    "place": "Ottappalam",
+    "lat": 10.7698092,
+    "lon": 76.3777089
+  },
+  {
+    "code": "VAK",
+    "name": "Varkala Sivagiri",
+    "place": "Varkala Sivagiri Station",
+    "lat": 8.7406369,
+    "lon": 76.723134
+  },
+  {
+    "code": "AFK",
+    "name": "Angamaly",
+    "place": "Angamaly",
+    "lat": 10.2264408,
+    "lon": 76.3739316
+  },
+  {
+    "code": "CGY",
+    "name": "Changanassery",
+    "place": "Changanacherry",
+    "lat": 9.4484386,
+    "lon": 76.5493799
+  },
+  {
+    "code": "KTU",
+    "name": "Kuttippuram",
+    "place": "Kuttippuram",
+    "lat": 10.845727,
+    "lon": 76.033311
+  },
+  {
+    "code": "QLD",
+    "name": "Koyilandy",
+    "place": "Koyilandy",
+    "lat": 11.4462041,
+    "lon": 75.693369
+  },
+  {
+    "code": "GUV",
+    "name": "Guruvayur",
+    "place": "Guruvayur",
+    "lat": 10.5972546,
+    "lon": 76.0459241
+  },
+  {
+    "code": "MVLK",
+    "name": "Mavelikara",
+    "place": "Mavelikara",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CKI",
+    "name": "Chalakudi",
+    "place": "Chalakudi",
+    "lat": 10.3025203,
+    "lon": 76.3211436
+  },
+  {
+    "code": "KPY",
+    "name": "Karunagapalli",
+    "place": "Karunagappally",
+    "lat": 9.0652253,
+    "lon": 76.5446447
+  },
+  {
+    "code": "IJK",
+    "name": "Irinjalakuda",
+    "place": "Irinjalakuda",
+    "lat": 10.3404997,
+    "lon": 76.2808307
+  },
+  {
+    "code": "PGI",
+    "name": "Parpanangadi",
+    "place": "Parpanangadi",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "SRTL",
+    "name": "Cherthala",
+    "place": "Shertalai",
+    "lat": 9.6906983,
+    "lon": 76.3259977
+  },
+  {
+    "code": "WKI",
+    "name": "Wadakanchery",
+    "place": "Wadakanchery",
+    "lat": 10.6513602,
+    "lon": 76.239645
+  },
+  {
+    "code": "FK",
+    "name": "Ferok",
+    "place": "Feroke",
+    "lat": 11.1759122,
+    "lon": 75.8301877
+  },
+  {
+    "code": "PVU",
+    "name": "Paravur",
+    "place": "Paravur",
+    "lat": 8.8148927,
+    "lon": 76.6693016
+  },
+  {
+    "code": "PTB",
+    "name": "Pattambi",
+    "place": "Pattambi",
+    "lat": 10.8022383,
+    "lon": 76.1809281
+  },
+  {
+    "code": "NLE",
+    "name": "Nileshwar",
+    "place": "Nileshwar",
+    "lat": 12.2562243,
+    "lon": 75.1353689
+  },
+  {
+    "code": "AMPA",
+    "name": "Ambalappuzha",
+    "place": "Ambalappuzha",
+    "lat": 9.3862866,
+    "lon": 76.3627219
+  },
+  {
+    "code": "HAD",
+    "name": "Haripad",
+    "place": "Haripad",
+    "lat": 9.2778496,
+    "lon": 76.4631956
+  },
+  {
+    "code": "TRTR",
+    "name": "Tripunittura",
+    "place": "Tripunittura",
+    "lat": 9.9497664,
+    "lon": 76.3526309
+  },
+  {
+    "code": "KPQ",
+    "name": "Kannapuram",
+    "place": "Kannapuram",
+    "lat": 11.9839784,
+    "lon": 75.3142351
+  },
+  {
+    "code": "STKT",
+    "name": "Sasthamkotta",
+    "place": "Sasthamkotta",
+    "lat": 9.0314647,
+    "lon": 76.6009828
+  },
+  {
+    "code": "TA",
+    "name": "Tanur",
+    "place": "Tanur",
+    "lat": 10.9780887,
+    "lon": 75.881498
+  },
+  {
+    "code": "CHV",
+    "name": "Charvattur",
+    "place": "Charvattur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "PAZ",
+    "name": "Payangadi",
+    "place": "Payangadi",
+    "lat": 12.0216663,
+    "lon": 75.2601948
+  },
+  {
+    "code": "PVRD",
+    "name": "Piravam Road",
+    "place": "Piravam Road",
+    "lat": 9.8290255,
+    "lon": 76.4555856
+  },
+  {
+    "code": "NYY",
+    "name": "Neyyattinkara",
+    "place": "Neyyattinkara",
+    "lat": 8.4100639,
+    "lon": 77.0816275
+  },
+  {
+    "code": "CRY",
+    "name": "Chirayinkil",
+    "place": "Chirayinkil",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KZK",
+    "name": "Kazhakuttam",
+    "place": "Kazhakkottam",
+    "lat": 8.556815,
+    "lon": 76.8727534
+  },
+  {
+    "code": "PASA",
+    "name": "Parassala",
+    "place": "Parassala",
+    "lat": 8.3397236,
+    "lon": 77.165665
+  },
+  {
+    "code": "KMQ",
+    "name": "Kumbala",
+    "place": "Kumbla (Kumble)",
+    "lat": 12.59012,
+    "lon": 74.943609
+  },
+  {
+    "code": "PGTN",
+    "name": "Palakkad Town",
+    "place": "Palakkad",
+    "lat": 10.7760551,
+    "lon": 76.6522877
+  },
+  {
+    "code": "VNB",
+    "name": "Vaniyambalam",
+    "place": "Vaniyambalam",
+    "lat": 11.1877298,
+    "lon": 76.2606552
+  },
+  {
+    "code": "AAM",
+    "name": "Angadippuram",
+    "place": "Angadippuram",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "NIL",
+    "name": "Nilambur Road",
+    "place": "Nilambur Road",
+    "lat": 11.2798926,
+    "lon": 76.253112
+  },
+  {
+    "code": "TVP",
+    "name": "Thiruvananthapuram Pettah",
+    "place": "Trivandrum",
+    "lat": 8.4943857,
+    "lon": 76.9325989
+  },
+  {
+    "code": "KVU",
+    "name": "Kadakavur",
+    "place": "Kadakkavoor",
+    "lat": 8.6786987,
+    "lon": 76.7676427
+  },
+  {
+    "code": "TUVR",
+    "name": "Turavur",
+    "place": "Turavur",
+    "lat": 9.7749279,
+    "lon": 76.3102752
+  },
+  {
+    "code": "IPL",
+    "name": "Idappally",
+    "place": "Idaplli",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "MJS",
+    "name": "Manjeshwar",
+    "place": "Manjeshwar",
+    "lat": 12.7249174,
+    "lon": 74.8873713
+  },
+  {
+    "code": "KUV",
+    "name": "Kundara",
+    "place": "Kundara",
+    "lat": 8.9602036,
+    "lon": 76.6782297
+  },
+  {
+    "code": "MAKM",
+    "name": "Mararikulam",
+    "place": "Mararikulam",
+    "lat": 9.5976652,
+    "lon": 76.3178983
+  },
+  {
+    "code": "VLI",
+    "name": "Vallikunnu",
+    "place": "Vallikunnu",
+    "lat": 11.0924175,
+    "lon": 75.8511454
+  },
+  {
+    "code": "AVS",
+    "name": "Auvaneswarem",
+    "place": "Auvaneswarem",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KQK",
+    "name": "Kotikulam",
+    "place": "Kotikulam",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KKZ",
+    "name": "Kottarakara",
+    "place": "Kottarakara",
+    "lat": 9.0002635,
+    "lon": 76.765871
+  },
+  {
+    "code": "MYY",
+    "name": "Mayyanad",
+    "place": "Mayyanad",
+    "lat": 8.8379952,
+    "lon": 76.6477213
+  },
+  {
+    "code": "PUK",
+    "name": "Pudukad",
+    "place": "Pudukad",
+    "lat": 10.4207845,
+    "lon": 76.2609953
+  },
+  {
+    "code": "PUU",
+    "name": "Punalur",
+    "place": "Punalur",
+    "lat": 9.0227095,
+    "lon": 76.9164366
+  },
+  {
+    "code": "PNQ",
+    "name": "Punkunnam",
+    "place": "Punkunnam",
+    "lat": 10.5341403,
+    "lon": 76.2089873
+  },
+  {
+    "code": "VARD",
+    "name": "Vaikam Road",
+    "place": "Vaikam Road",
+    "lat": 9.7778824,
+    "lon": 76.4744489
+  },
+  {
+    "code": "MNTT",
+    "name": "Mulanturutti",
+    "place": "Mulanturutti",
+    "lat": 9.8977739,
+    "lon": 76.3906682
+  },
+  {
+    "code": "VAPM",
+    "name": "Valapattanam",
+    "place": "Valapattanam",
+    "lat": 11.9273761,
+    "lon": 75.3463714
+  },
+  {
+    "code": "ETM",
+    "name": "Ettumanur",
+    "place": "Ettumanur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "TKQ",
+    "name": "Trikarpur",
+    "place": "Trikarpur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CYN",
+    "name": "Cheriyanad",
+    "place": "Cheriyanad",
+    "lat": 9.2732942,
+    "lon": 76.5849004
+  },
+  {
+    "code": "PYOL",
+    "name": "Payyoli",
+    "place": "Payyoli",
+    "lat": 11.5171659,
+    "lon": 75.6185483
+  },
+  {
+    "code": "KLQ",
+    "name": "Kilikollur",
+    "place": "Kilikollur",
+    "lat": 8.9181293,
+    "lon": 76.632618
+  },
+  {
+    "code": "BFR",
+    "name": "Bekal Fort",
+    "place": "Bekal Fort",
+    "lat": 12.3869169,
+    "lon": 75.0430218
+  },
+  {
+    "code": "KRPP",
+    "name": "Kuruppanthara",
+    "place": "Kuruppanthara",
+    "lat": 9.7350762,
+    "lon": 76.5104911
+  },
+  {
+    "code": "EDN",
+    "name": "Edamann",
+    "place": "",
+    "lat": 9.0071677,
+    "lon": 76.982413
+  },
+  {
+    "code": "KLGD",
+    "name": "Kollengode",
+    "place": "",
+    "lat": 10.6269955,
+    "lon": 76.6989241
+  },
+  {
+    "code": "PRND",
+    "name": "Perinad",
+    "place": "Perinad",
+    "lat": 8.9486074,
+    "lon": 76.6206762
+  },
+  {
+    "code": "AYVN",
+    "name": "Aryankavu New Block",
+    "place": "",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "TUA",
+    "name": "Tirunnavaya",
+    "place": "Tirunnavaya",
+    "lat": 10.8749747,
+    "lon": 75.9853334
+  },
+  {
+    "code": "EKN",
+    "name": "Ezhukone",
+    "place": "Ezhukone",
+    "lat": 8.97952,
+    "lon": 76.7153297
+  },
+  {
+    "code": "UAA",
+    "name": "Uppala",
+    "place": "Uppala",
+    "lat": 12.6703768,
+    "lon": 74.9064473
+  },
+  {
+    "code": "ELM",
+    "name": "Ezhimala",
+    "place": "Elimala",
+    "lat": 12.0687284,
+    "lon": 75.2308897
+  },
+  {
+    "code": "MQU",
+    "name": "Murukkampuzha",
+    "place": "Murukkumpuzha",
+    "lat": 8.6131373,
+    "lon": 76.8304901
+  },
+  {
+    "code": "OCR",
+    "name": "Ochira",
+    "place": "Ochira",
+    "lat": 9.1318373,
+    "lon": 76.5251596
+  },
+  {
+    "code": "KN",
+    "name": "Kadalundi",
+    "place": "Kadalundi",
+    "lat": 11.1340147,
+    "lon": 75.8281531
+  },
+  {
+    "code": "CHPD",
+    "name": "Cheppad Halt",
+    "place": "Cheppad",
+    "lat": 9.2330076,
+    "lon": 76.4768113
+  },
+  {
+    "code": "LDY",
+    "name": "Lakkiti",
+    "place": "Lakkiti",
+    "lat": 10.7532677,
+    "lon": 76.4342613
+  },
+  {
+    "code": "MGK",
+    "name": "Mulangunnathukavu",
+    "place": "Mulangunnathukavu",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "TVCS",
+    "name": "Thiruvananthapuram South",
+    "place": "Trivandrum",
+    "lat": 8.4870167,
+    "lon": 76.9526408
+  },
+  {
+    "code": "PPNS",
+    "name": "Pappinissery",
+    "place": "Pappinissery",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "BRAM",
+    "name": "Balaramapuram",
+    "place": "Balaramapuram",
+    "lat": 8.429903,
+    "lon": 77.0519047
+  },
+  {
+    "code": "PDGM",
+    "name": "Pudunagaram",
+    "place": "",
+    "lat": 10.6860794,
+    "lon": 76.6842465
+  },
+  {
+    "code": "MMDA",
+    "name": "Muthalamada",
+    "place": "",
+    "lat": 10.6280011,
+    "lon": 76.7730559
+  },
+  {
+    "code": "OKL",
+    "name": "Ottakkal",
+    "place": "",
+    "lat": 8.9863793,
+    "lon": 77.0381282
+  },
+  {
+    "code": "ETR",
+    "name": "Elattur",
+    "place": "Elattur",
+    "lat": 11.3463579,
+    "lon": 75.741201
+  },
+  {
+    "code": "KUC",
+    "name": "Karukkutty",
+    "place": "Karukkutty",
+    "lat": 10.2257051,
+    "lon": 76.3737255
+  },
+  {
+    "code": "KUL",
+    "name": "Kallayi",
+    "place": "Kallayi Kozhikode South",
+    "lat": 11.2338188,
+    "lon": 75.7889536
+  },
+  {
+    "code": "VTK",
+    "name": "Vallathol Nagar",
+    "place": "Vallathol Nagar",
+    "lat": 10.7317268,
+    "lon": 76.2814904
+  },
+  {
+    "code": "KUMM",
+    "name": "Kumbalam",
+    "place": "Kumbalam",
+    "lat": 9.9064186,
+    "lon": 76.3113965
+  },
+  {
+    "code": "WH",
+    "name": "West Hill",
+    "place": "West Hill",
+    "lat": 11.2851634,
+    "lon": 75.7650382
+  },
+  {
+    "code": "WRA",
+    "name": "Walayar",
+    "place": "Walayar",
+    "lat": 10.8473282,
+    "lon": 76.8376238
+  },
+  {
+    "code": "KJKD",
+    "name": "Kanjikode",
+    "place": "Kanjikode",
+    "lat": 10.8002813,
+    "lon": 76.7547737
+  },
+  {
+    "code": "CS",
+    "name": "Kannur South",
+    "place": "Cannanore South",
+    "lat": 11.8667938,
+    "lon": 75.4002806
+  },
+  {
+    "code": "PUM",
+    "name": "Pallippuram",
+    "place": "Pallippuram",
+    "lat": 10.8414677,
+    "lon": 76.1124713
+  },
+  {
+    "code": "JGE",
+    "name": "Jagannath Temple Gate",
+    "place": "Jagannath Temple Gate",
+    "lat": 11.7385768,
+    "lon": 75.5081822
+  },
+  {
+    "code": "TKT",
+    "name": "Tikkotti",
+    "place": "Tikkotti",
+    "lat": 11.4898203,
+    "lon": 75.6262971
+  },
+  {
+    "code": "PLL",
+    "name": "Parli",
+    "place": "Parli",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KLMR",
+    "name": "Kalamassery",
+    "place": "Kalamassery",
+    "lat": 10.0623617,
+    "lon": 76.3272102
+  },
+  {
+    "code": "OLR",
+    "name": "Ollur",
+    "place": "Thrissur Ollur",
+    "lat": 10.4737972,
+    "lon": 76.2371136
+  },
+  {
+    "code": "KXP",
+    "name": "Kaniyapuram",
+    "place": "Kaniyapuram",
+    "lat": 8.5874032,
+    "lon": 76.854403
+  },
+  {
+    "code": "ETK",
+    "name": "Edakkad",
+    "place": "Etakkot",
+    "lat": 11.8060546,
+    "lon": 75.4437273
+  },
+  {
+    "code": "EVA",
+    "name": "Edavai",
+    "place": "Edavai",
+    "lat": 8.7632119,
+    "lon": 76.6974127
+  },
+  {
+    "code": "MNY",
+    "name": "Mankarai",
+    "place": "Mankarai",
+    "lat": 10.7749856,
+    "lon": 76.5012638
+  },
+  {
+    "code": "MNUR",
+    "name": "Mannanur",
+    "place": "Mannanur",
+    "lat": 10.7493033,
+    "lon": 76.3243584
+  },
+  {
+    "code": "KRKD",
+    "name": "Karakkad",
+    "place": "Karakkad",
+    "lat": 10.7820914,
+    "lon": 76.2288775
+  },
+  {
+    "code": "CGV",
+    "name": "Chingavanam",
+    "place": "Chingavanam",
+    "lat": 9.5292309,
+    "lon": 76.5253789
+  },
+  {
+    "code": "DINR",
+    "name": "Divinenagar",
+    "place": "Divinenagar",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "MQO",
+    "name": "Munroturuttu",
+    "place": "Munroturuttu",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "TUV",
+    "name": "Tuvvur",
+    "place": "Tuvvur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "VPZ",
+    "name": "Vallapuzha",
+    "place": "Vallapuzha",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "PKQ",
+    "name": "Pattikkad",
+    "place": "Pattikkad",
+    "lat": 11.021187,
+    "lon": 76.2325798
+  },
+  {
+    "code": "CQA",
+    "name": "Cherukara",
+    "place": "Cherukara",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "AYV",
+    "name": "Arayankavu",
+    "place": "Aryankavu",
+    "lat": 8.9811615,
+    "lon": 77.1528919
+  },
+  {
+    "code": "MLTR",
+    "name": "Melattur",
+    "place": "Melattur",
+    "lat": 11.0652277,
+    "lon": 76.2727511
+  },
+  {
+    "code": "DAVM",
+    "name": "Dhanuvachapuram",
+    "place": "Dhanuvachapuram",
+    "lat": 8.378521,
+    "lon": 77.1256471
+  },
+  {
+    "code": "PNPR",
+    "name": "Punnapra",
+    "place": "Punnapra",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "TZH",
+    "name": "Takazhi",
+    "place": "Takazhi",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "NAU",
+    "name": "Nadapuram Road",
+    "place": "Nadapuram Road",
+    "lat": 11.6391882,
+    "lon": 75.5754514
+  },
+  {
+    "code": "VEK",
+    "name": "Vellarakkad",
+    "place": "Vellarakkad",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "AMVA",
+    "name": "Amaravila Halt",
+    "place": "Amaravila",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "VDKS",
+    "name": "Vadanam Kurussi Halt",
+    "place": "Vadanam Kurussi",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "AMY",
+    "name": "Akathumuri",
+    "place": "Akathumuri",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KDTY",
+    "name": "Kaduturutti Halt",
+    "place": "Kaduturutti",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CTPE",
+    "name": "Chandanattop Halt",
+    "place": "Chandanattop",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "VLL",
+    "name": "Vellayil",
+    "place": "Vellayil",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CLMD",
+    "name": "Chullimada",
+    "place": "Chullimada",
+    "lat": 10.8206785,
+    "lon": 76.8040172
+  },
+  {
+    "code": "KFE",
+    "name": "Kurikad",
+    "place": "Kurikad",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "EDP",
+    "name": "Edapalayam Halt",
+    "place": "",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KFQ",
+    "name": "Kumaranallur",
+    "place": "Kumaranallur",
+    "lat": 9.6170199,
+    "lon": 76.5321639
+  },
+  {
+    "code": "IRP",
+    "name": "Iravipuram",
+    "place": "Kollam",
+    "lat": 8.8859415,
+    "lon": 76.595038
+  },
+  {
+    "code": "AROR",
+    "name": "Aroor Halt",
+    "place": "Aroor",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "EZP",
+    "name": "Ezhuppunna",
+    "place": "Ezhuppunna",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CQL",
+    "name": "Chirakkal",
+    "place": "Chirakkal",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "IGL",
+    "name": "Iringal",
+    "place": "Iringal",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KFI",
+    "name": "Kappil",
+    "place": "Kappil",
+    "lat": 8.7795558,
+    "lon": 76.6792879
+  },
+  {
+    "code": "PLPM",
+    "name": "Palappuram",
+    "place": "Palappuram",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KZC",
+    "name": "Kulukkalur",
+    "place": "Kulukkalur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CWR",
+    "name": "Chovvara",
+    "place": "Chovvara",
+    "lat": 10.1329777,
+    "lon": 76.3722718
+  },
+  {
+    "code": "KVTA",
+    "name": "Karuvatta Halt",
+    "place": "Karuvatta",
+    "lat": 9.3166018,
+    "lon": 76.431111
+  },
+  {
+    "code": "VELI",
+    "name": "Veli",
+    "place": "Veli",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "NYI",
+    "name": "Nellayi",
+    "place": "Nellayi",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KLAD",
+    "name": "Kalanad Halt",
+    "place": "Kalanad",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "TMPY",
+    "name": "Tumboli",
+    "place": "Tumboli",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KPTM",
+    "name": "Kanjiramattom",
+    "place": "Kanjiramattom",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CMC",
+    "name": "Chemancheri",
+    "place": "Chemancheri",
+    "lat": 11.4056131,
+    "lon": 75.7192433
+  },
+  {
+    "code": "TRVZ",
+    "name": "Tiruvizha",
+    "place": "Tiruvizha",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "PGZ",
+    "name": "Perunguzhi",
+    "place": "Perunguzhi",
+    "lat": 8.6317315,
+    "lon": 76.8081619
+  },
+  {
+    "code": "KODN",
+    "name": "Kodumunda",
+    "place": "Kodumunda",
+    "lat": 10.8175653,
+    "lon": 76.1438563
+  },
+  {
+    "code": "DMD",
+    "name": "Dharmadam",
+    "place": "Dharmadam",
+    "lat": 11.7787174,
+    "lon": 75.4632527
+  },
+  {
+    "code": "KFV",
+    "name": "Kundara East",
+    "place": "Kundara East",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KTHY",
+    "name": "Kazhuthuruthy",
+    "place": "",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "PEU",
+    "name": "Perssannur",
+    "place": "Perssannur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "MUC",
+    "name": "Mullurkara",
+    "place": "Mullurkara",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "MUKE",
+    "name": "Mukkali",
+    "place": "Mukkali",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KIF",
+    "name": "Kuri",
+    "place": "Kuri",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KAVR",
+    "name": "Kalavoor Halt",
+    "place": "Kalavur",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "KRAN",
+    "name": "Koratti Angadi",
+    "place": "Koratti Angadi",
+    "lat": 10.41667,
+    "lon": 76.5
+  },
+  {
+    "code": "CDRA",
+    "name": "Chandera",
+    "place": "Chandera",
+    "lat": 12.1803357,
+    "lon": 75.1677861
+  },
+  {
+    "code": "VAY",
+    "name": "Vayalar",
+    "place": "Vayalar",
+    "lat": 10.41667,
+    "lon": 76.5
+  }
+]
