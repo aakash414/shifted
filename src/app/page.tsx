@@ -15,24 +15,62 @@ export default function Home() {
   const [sortBy, setSortBy] = useState<SortOption>('score');
   const [error, setError] = useState<string | null>(null);
 
+  // Cache for Gemini routes
+  const geminiRouteCache: Record<string, GeminiRoute | null> = {};
+  // Load cache from localStorage if available
+  if (typeof window !== 'undefined' && window.localStorage) {
+    try {
+      const cached = window.localStorage.getItem('geminiRouteCache');
+      if (cached) Object.assign(geminiRouteCache, JSON.parse(cached));
+    } catch { }
+  }
+
+  // Helper to save cache to localStorage
+  function saveCache() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.setItem('geminiRouteCache', JSON.stringify(geminiRouteCache));
+    }
+  }
+
+  // Concurrency-limited pool
+  async function promisePool<T>(tasks: (() => Promise<T>)[], limit: number): Promise<T[]> {
+    const results: T[] = [];
+    let i = 0;
+    async function worker() {
+      while (i < tasks.length) {
+        const cur = i++;
+        results[cur] = await tasks[cur]();
+      }
+    }
+    await Promise.all(Array(Math.min(limit, tasks.length)).fill(0).map(worker));
+    return results;
+  }
+
   async function handleSearch(selectedDistricts: string[], post: string, userLocation: string) {
     setLoading(true);
     setError(null);
     try {
       const schools = await getFilteredSchools(selectedDistricts, post);
-      // Only top 10 for Gemini API
-      const topSchools = schools.slice(0, 10);
       // Set loading state for each card
-      setResults(topSchools.map(s => ({ ...s, routeLoading: true })));
-      // Fetch routes in parallel
-      const routes = await Promise.all(
-        topSchools.map(school =>
-          getRouteForSchool(userLocation, `${school.school}, ${school.district}, Kerala`)
-        )
-      );
-      console.log(routes, 'routes')
+      setResults(schools.map(s => ({ ...s, routeLoading: true })));
+
+      // Prepare tasks for Gemini API (with cache)
+      const tasks = schools.map((school) => {
+        const key = `${userLocation}|${school.school}, ${school.district}, Kerala`;
+        return async () => {
+          if (key in geminiRouteCache) {
+            return geminiRouteCache[key];
+          }
+          const route = await getRouteForSchool(userLocation, `${school.school}, ${school.district}, Kerala`);
+          geminiRouteCache[key] = route;
+          saveCache();
+          return route;
+        };
+      });
+      // Limit concurrency to 5
+      const routes = await promisePool(tasks, 5);
       // Attach routes
-      let schoolsWithRoutes = topSchools.map((school, idx) => ({
+      let schoolsWithRoutes = schools.map((school, idx) => ({
         ...school,
         route: routes[idx],
         routeLoading: false

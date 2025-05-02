@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { LocationInput } from "./LocationInput";
 
 // UI: Replace with shadcn/ui Select/Combobox if available in your setup
 function MultiSelect({ options, value, onChange, label }: { options: string[]; value: string[]; onChange: (v: string[]) => void; label: string }) {
@@ -118,16 +119,13 @@ export function SchoolSearchForm({ allDistricts, onSearch, loading }: SchoolSear
         onChange={setPost}
         label="Select Post"
       />
-      <div className="flex flex-col gap-1">
-        <label className="font-medium mb-1">Your Current Location</label>
-        <input
-          type="text"
-          value={userLocation}
-          onChange={e => setUserLocation(e.target.value)}
-          placeholder="Google Maps link, place name, or address"
-          className="border rounded px-2 py-1"
-        />
-      </div>
+      <LocationInput
+        value={userLocation}
+        onChange={setUserLocation}
+        label="Your Current Location"
+        placeholder="Google Maps link, place name, or address"
+        disabled={loading}
+      />
       <button
         type="submit"
         className="bg-primary text-primary-foreground rounded px-4 py-2 font-semibold hover:bg-primary/90 transition disabled:opacity-60"
