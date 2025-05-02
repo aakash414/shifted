@@ -1,6 +1,17 @@
 import { School } from "@/lib/supabase";
 
 import type { GeminiRoute } from "@/lib/gemini";
+
+type GeminiStep = {
+  step?: number;
+  description?: string;
+  instruction?: string;
+  walking_time?: string;
+  waiting_time?: string;
+  in_vehicle_time?: string;
+  details?: string;
+  [key: string]: unknown;
+};
 import { Collapsible } from "@/components/Collapsible";
 
 export interface SchoolCardProps {
@@ -45,7 +56,7 @@ export function SchoolCard({ school, route, routeLoading, onSeeRoute }: SchoolCa
                     in_vehicle_time,
                     details,
                     ...rest
-                  } = step as any;
+                  } = step as GeminiStep;
                   return (
                     <li key={i} className="mb-2">
                       {s !== undefined && <b>Step {s}:</b>} {instruction || description}
