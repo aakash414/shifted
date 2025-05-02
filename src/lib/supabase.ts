@@ -36,7 +36,7 @@ export async function getFilteredSchools(
   districts: string[],
   post: string
 ): Promise<School[]> {
-  let query = supabase
+  const query = supabase
     .from('schools')
     .select('*')
     .in('district', districts)
@@ -45,11 +45,13 @@ export async function getFilteredSchools(
   const { data, error } = await query;
   if (error) throw error;
   // Map each row to School type explicitly
-  return (data as any[]).map(row => ({
-    district: row.district as string,
-    school: row.school as string,
-    post: row.post as string,
-    // Attach optional Gemini route if present (for type compatibility)
-    geminiRoute: row.geminiRoute
-  })) as School[];
+  return (data as { district: string; school: string; post: string; geminiRoute?: unknown }[]).map(row => {
+    const base = {
+      district: row.district,
+      school: row.school,
+      post: row.post,
+    };
+    // Only attach geminiRoute if it exists
+    return 'geminiRoute' in row ? { ...base, geminiRoute: row.geminiRoute } : base;
+  }) as School[];
 }

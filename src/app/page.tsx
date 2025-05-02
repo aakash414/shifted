@@ -2,30 +2,18 @@
 
 import { SchoolSearchForm } from "@/components/SchoolSearchForm";
 import { SchoolCard } from "@/components/SchoolCard";
-import { getFilteredSchools, supabase, School } from "@/lib/supabase";
+import { getFilteredSchools, School } from "@/lib/supabase";
 import { getRouteForSchool, GeminiRoute } from "@/lib/gemini";
+import { SortingDropdown, SortOption } from "@/components/SortingDropdown";
+import { KERALA_DISTRICTS } from "@/constants/districts";
 import { useState } from "react";
 
 export default function Home() {
-  // We'll fetch distinct districts and posts on the client for simplicity
-  const [districts, setDistricts] = useState<string[]>([]);
-  const [posts, setPosts] = useState<string[]>([]);
+  const districts = KERALA_DISTRICTS;
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<(School & { route?: GeminiRoute | null, routeLoading?: boolean })[]>([]);
+  const [sortBy, setSortBy] = useState<SortOption>('score');
   const [error, setError] = useState<string | null>(null);
-
-  // Fetch options on mount
-  useState(() => {
-    async function fetchOptions() {
-      const [districtRes, postRes] = await Promise.all([
-        supabase.from("schools").select("district").then(({ data }) => data ? Array.from(new Set(data.map((d: any) => d.district))) : []),
-        supabase.from("schools").select("post").then(({ data }) => data ? Array.from(new Set(data.map((d: any) => d.post))) : []),
-      ]);
-      setDistricts(districtRes);
-      setPosts(postRes);
-    }
-    fetchOptions();
-  });
 
   async function handleSearch(selectedDistricts: string[], post: string, userLocation: string) {
     setLoading(true);
@@ -42,30 +30,72 @@ export default function Home() {
           getRouteForSchool(userLocation, `${school.school}, ${school.district}, Kerala`)
         )
       );
+      console.log(routes, 'routes')
       // Attach routes
       let schoolsWithRoutes = topSchools.map((school, idx) => ({
         ...school,
         route: routes[idx],
         routeLoading: false
       }));
-      // Sort by score + time if available
-      schoolsWithRoutes = schoolsWithRoutes.sort((a, b) => {
-        if (!a.route || !b.route) return 0;
-        // Weighted: lower score is worse, lower time is better
-        const parseTime = (t: string) => parseInt(t.split(" ")[0]) || 9999;
-        const aScore = a.route.score * 10 + parseTime(a.route.total_time);
-        const bScore = b.route.score * 10 + parseTime(b.route.total_time);
-        return aScore - bScore;
-      });
+      console.log(schoolsWithRoutes, 'schoolsWithRoutes')
+      // Sort dynamically
+      schoolsWithRoutes = sortSchools(schoolsWithRoutes, sortBy);
       setResults(schoolsWithRoutes);
-    } catch (err: any) {
-      setError(err.message || "Failed to fetch schools/routes");
+    } catch (err: Error | unknown) {
+      setError(err instanceof Error ? err.message : "Failed to fetch schools/routes");
     }
     setLoading(false);
   }
+  // Sorting logic
+  function sortSchools(
+    schools: (School & { route?: GeminiRoute | null, routeLoading?: boolean })[],
+    sortBy: SortOption
+  ) {
+    return [...schools].sort((a, b) => {
+      if (!a.route || !b.route) return 0;
+      const parseTime = (t: string) => parseInt(t.split(" ")[0]) || 9999;
+      switch (sortBy) {
+        case "score":
+          return a.route.score - b.route.score;
+        case "time":
+          return parseTime(a.route.total_time) - parseTime(b.route.total_time);
+        case "switches":
+          return a.route.switches - b.route.switches;
+        case "walk":
+          return a.route.walk_km - b.route.walk_km;
+        default:
+          return 0;
+      }
+    }).map(s => ({
+      ...s,
+      route: s.route ?? null,
+      routeLoading: typeof s.routeLoading === 'boolean' ? s.routeLoading : false,
+    }));
+  }
+  // Handle sort change
+  function handleSortChange(opt: SortOption) {
+    setSortBy(opt);
+    setResults(results => sortSchools(results, opt));
+  }
+
+  // Reset filters
+  function handleReset() {
+    setResults([]);
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4 sm:p-10">
       <h1 className="text-3xl font-bold mb-8 text-center">Find Schools</h1>
+      <div className="flex items-center gap-4 mb-4">
+        <SortingDropdown value={sortBy} onChange={handleSortChange} />
+        <button
+          className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 text-sm font-medium"
+          onClick={handleReset}
+          disabled={loading}
+        >
+          Reset Filters
+        </button>
+      </div>
       <SchoolSearchForm
         allDistricts={districts}
         onSearch={handleSearch}
@@ -79,7 +109,7 @@ export default function Home() {
             school={school}
             route={school.route}
             routeLoading={school.routeLoading}
-            onSeeRoute={() => {}}
+            onSeeRoute={() => { }}
           />
         ))}
       </div>

@@ -1,8 +1,12 @@
 // Utility to get a smart public transport route using Gemini API
 // Usage: await getRouteForSchool(origin, destination)
 
+export type GeminiInstruction =
+  | string
+  | { step?: number; instruction: string; mode?: string; [key: string]: unknown };
+
 export type GeminiRoute = {
-  instructions: string[];
+  instructions: GeminiInstruction[];
   total_time: string;
   switches: number;
   walk_km: number;
@@ -32,10 +36,13 @@ export async function getRouteForSchool(origin: string, destination: string): Pr
   try {
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
     // Remove markdown code block if present
-    const cleaned = text.replace(/^```json|```$/g, '').trim();
+    const cleaned = text.replace(/```json|```/gi, '').trim();
     json = JSON.parse(cleaned);
-  } catch (e) {
+    console.log(json, 'json before returning');
+  } catch (e: unknown) {
+    console.log(e, 'e');
     return null;
   }
+  console.log(json, 'json')
   return json as GeminiRoute;
 }

@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { School } from "@/lib/supabase";
 
 // UI: Replace with shadcn/ui Select/Combobox if available in your setup
 function MultiSelect({ options, value, onChange, label }: { options: string[]; value: string[]; onChange: (v: string[]) => void; label: string }) {
@@ -98,6 +97,7 @@ export function SchoolSearchForm({ allDistricts, onSearch, loading }: SchoolSear
   const [districts, setDistricts] = useState<string[]>([]);
   const [post, setPost] = useState("");
   const [userLocation, setUserLocation] = useState("");
+  console.log(allDistricts, 'all districts')
   return (
     <form
       className="flex flex-col gap-4 w-full max-w-xl bg-card p-6 rounded-xl shadow-lg border"
