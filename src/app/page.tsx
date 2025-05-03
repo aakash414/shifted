@@ -123,36 +123,45 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4 sm:p-10">
-      <h1 className="text-3xl font-bold mb-8 text-center">Find Schools</h1>
-      <div className="flex items-center gap-4 mb-4">
-        <SortingDropdown value={sortBy} onChange={handleSortChange} />
-        <button
-          className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 text-sm font-medium"
-          onClick={handleReset}
-          disabled={loading}
-        >
-          Reset Filters
-        </button>
-      </div>
-      <SchoolSearchForm
-        allDistricts={districts}
-        onSearch={handleSearch}
-        loading={loading}
-      />
-      {error && <div className="text-red-500 mt-4">{error}</div>}
-      <div className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full max-w-6xl">
-        {results.map((school, idx) => (
-          <SchoolCard
-            key={school.school + idx}
-            school={school}
-            route={school.route}
-            routeLoading={school.routeLoading}
-            onSeeRoute={() => { }}
-          />
-        ))}
-      </div>
-    </div>
+    <main className="flex flex-col items-center min-h-screen w-full p-4 sm:p-6">
+      <header className="flex flex-col items-center">
+        <h1 className="header-title text-center">School Finder</h1>
+        <div className="header-tagline text-center max-w-xl">
+          Find schools based on your location and preferences.
+        </div>
+      </header>
+      <section className="card-ui w-full max-w-2xl flex flex-col items-center">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full mb-4 justify-center">
+          <SortingDropdown value={sortBy} onChange={handleSortChange} />
+          <button
+            className="btn-modern"
+            onClick={handleReset}
+            disabled={loading}
+          >
+            Reset Filters
+          </button>
+        </div>
+        <SchoolSearchForm
+          allDistricts={districts}
+          onSearch={handleSearch}
+          loading={loading}
+        />
+        {error && <div className="text-red-500 mt-4">{error}</div>}
+      </section>
+      <section className="w-full max-w-6xl mt-14">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {results.map((school, idx) => (
+            <SchoolCard
+              key={school.school + idx}
+              school={school}
+              route={school.route}
+              routeLoading={school.routeLoading}
+              onSeeRoute={() => { }}
+            />
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
 

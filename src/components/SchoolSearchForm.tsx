@@ -1,25 +1,76 @@
 "use client";
-import { useState } from "react";
 import { LocationInput } from "./LocationInput";
 
 // UI: Replace with shadcn/ui Select/Combobox if available in your setup
+import React, { useRef, useState, useEffect } from "react";
+
 function MultiSelect({ options, value, onChange, label }: { options: string[]; value: string[]; onChange: (v: string[]) => void; label: string }) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    if (open) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [open]);
+
+  function toggleOption(opt: string) {
+    if (value.includes(opt)) {
+      onChange(value.filter(v => v !== opt));
+    } else {
+      onChange([...value, opt]);
+    }
+  }
+  function removeOption(opt: string) {
+    onChange(value.filter(v => v !== opt));
+  }
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 relative" ref={containerRef}>
       <label className="font-medium mb-1">{label}</label>
-      <select
-        multiple
-        value={value}
-        onChange={e => {
-          const selected = Array.from(e.target.selectedOptions, o => o.value);
-          onChange(selected);
-        }}
-        className="border rounded px-2 py-1 min-w-[180px]"
+      <div
+        className="min-w-[220px] rounded-xl border px-3 py-2 bg-white cursor-pointer flex flex-wrap gap-2 items-center pastel-bg-blue relative"
+        tabIndex={0}
+        onClick={() => setOpen(v => !v)}
+        onKeyDown={e => { if (e.key === "Enter" || e.key === " ") setOpen(v => !v); }}
+        aria-haspopup="listbox"
+        aria-expanded={open}
       >
-        {options.map(opt => (
-          <option key={opt} value={opt}>{opt}</option>
+        {value.length === 0 && <span className="text-gray-400">Select district(s)...</span>}
+        {value.map(v => (
+          <span key={v} className="flex items-center bg-pastel-green rounded-full px-3 py-1 text-sm mr-1 mb-1 shadow-sm">
+            {v}
+            <button
+              type="button"
+              className="ml-2 text-lg text-gray-500 hover:text-red-500 focus:outline-none"
+              onClick={e => { e.stopPropagation(); removeOption(v); }}
+              aria-label={`Remove ${v}`}
+            >
+              ×
+            </button>
+          </span>
         ))}
-      </select>
+        <span className="ml-auto text-gray-500 text-xl select-none">▾</span>
+      </div>
+      {open && (
+        <div className="absolute top-full left-0 z-10 mt-2 w-full bg-white border rounded-xl shadow-xl max-h-56 overflow-y-auto pastel-bg-yellow animate-fade-in">
+          {options.map(opt => (
+            <label key={opt} className="flex items-center px-3 py-2 hover:bg-pastel-pink cursor-pointer rounded-xl">
+              <input
+                type="checkbox"
+                checked={value.includes(opt)}
+                onChange={() => toggleOption(opt)}
+                className="accent-green-600 mr-2"
+                tabIndex={-1}
+              />
+              <span>{opt}</span>
+            </label>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -128,7 +179,7 @@ export function SchoolSearchForm({ allDistricts, onSearch, loading }: SchoolSear
       />
       <button
         type="submit"
-        className="bg-primary text-primary-foreground rounded px-4 py-2 font-semibold hover:bg-primary/90 transition disabled:opacity-60"
+        className="btn-modern disabled:opacity-60"
         disabled={loading}
       >
         {loading ? "Finding Schools..." : "Find Schools"}
