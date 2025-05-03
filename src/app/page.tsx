@@ -125,7 +125,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full p-4 sm:p-6">
       <header className="flex flex-col items-center">
-        <h1 className="header-title text-center">School Finder</h1>
+        <h1 className="header-title text-center">ShiftEd</h1>
         <div className="header-tagline text-center max-w-xl">
           Find schools based on your location and preferences.
         </div>

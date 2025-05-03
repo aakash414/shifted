@@ -1,8 +1,8 @@
-# Kerala School Finder
+# ShiftEd
 
 > **Discover government higher secondary schools in Kerala, with your post for transfer application.**
 
-Kerala School Finder is a web app that helps teachers find Kerala government higher secondary schools based on location, preferences and their designation which could be used to create the list of schools for transfer application.
+ShiftEd is a web app that helps teachers find Kerala government higher secondary schools based on location, preferences and their designation which could be used to create the list of schools for transfer application.
 
 ---
 
