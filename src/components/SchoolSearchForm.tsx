@@ -38,10 +38,11 @@ function MultiSelect({ options, value, onChange, label }: { options: string[]; v
         onKeyDown={e => { if (e.key === "Enter" || e.key === " ") setOpen(v => !v); }}
         aria-haspopup="listbox"
         aria-expanded={open}
+        style={{ boxShadow: '0 2px 8px 0 rgba(60,60,120,0.04)' }}
       >
         {value.length === 0 && <span className="text-gray-400">Select district(s)...</span>}
         {value.map(v => (
-          <span key={v} className="flex items-center bg-pastel-green rounded-full px-3 py-1 text-sm mr-1 mb-1 shadow-sm">
+          <span key={v} className="selected-tag animate-scale-in">
             {v}
             <button
               type="button"
@@ -56,7 +57,7 @@ function MultiSelect({ options, value, onChange, label }: { options: string[]; v
         <span className="ml-auto text-gray-500 text-xl select-none">▾</span>
       </div>
       {open && (
-        <div className="absolute top-full left-0 z-10 mt-2 w-full bg-white border rounded-xl shadow-xl max-h-56 overflow-y-auto pastel-bg-yellow animate-fade-in">
+        <div className="absolute top-full left-0 z-10 mt-2 w-full custom-dropdown animate-fade-in">
           {options.map(opt => (
             <label key={opt} className="flex items-center px-3 py-2 hover:bg-pastel-pink cursor-pointer rounded-xl">
               <input
@@ -82,7 +83,8 @@ function SingleSelect({ options, value, onChange, label }: { options: string[]; 
       <select
         value={value}
         onChange={e => onChange(e.target.value)}
-        className="border rounded px-2 py-1 min-w-[180px]"
+        className="border rounded px-2 py-1 min-w-[180px] pastel-bg-yellow"
+        style={{ boxShadow: '0 2px 8px 0 rgba(60,60,120,0.04)' }}
       >
         <option value="">Select...</option>
         {options.map(opt => (
@@ -152,7 +154,7 @@ export function SchoolSearchForm({ allDistricts, onSearch, loading }: SchoolSear
   console.log(allDistricts, 'all districts')
   return (
     <form
-      className="flex flex-col gap-4 w-full max-w-xl bg-card p-6 rounded-xl shadow-lg border"
+      className="flex flex-col gap-6 w-full max-w-xl bg-card p-8 rounded-3xl shadow-lg border"
       onSubmit={e => {
         e.preventDefault();
         onSearch(districts, post, userLocation);

@@ -123,14 +123,13 @@ export default function Home() {
   }
 
   return (
-    <main className="flex flex-col items-center min-h-screen w-full p-4 sm:p-6">
-      <header className="flex flex-col items-center">
-        <h1 className="header-title text-center">ShiftEd</h1>
-        <div className="header-tagline text-center max-w-xl">
-          Find schools based on your location and preferences.
-        </div>
+    <main className="flex flex-col items-center min-h-screen w-full p-4 sm:p-6 section-fade-in" style={{ background: 'var(--gradient-bg)' }}>
+      <header className="flex flex-col items-center mb-4 animate-fade-in">
+        <h1 className="header-title text-center" style={{ fontSize: '3.2rem', letterSpacing: '-2.5px', color: 'var(--header-text)' }}>ShiftEd</h1>
+        <div className="header-tagline text-center max-w-xl" style={{ color: '#388e6d', fontWeight: 400, fontSize: '1.3rem' }}>
+        Find the right school for your next transfer — sorted by distance, convenience, and your staff position        </div>
       </header>
-      <section className="card-ui w-full max-w-2xl flex flex-col items-center">
+      <section className="card-ui pastel-card w-full max-w-2xl flex flex-col items-center animate-scale-in">
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full mb-4 justify-center">
           <SortingDropdown value={sortBy} onChange={handleSortChange} />
           <button
@@ -146,21 +145,39 @@ export default function Home() {
           onSearch={handleSearch}
           loading={loading}
         />
-        {error && <div className="text-red-500 mt-4">{error}</div>}
+        {error && <div className="text-red-500 mt-4 animate-fade-in">{error}</div>}
       </section>
       <section className="w-full max-w-6xl mt-14">
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {results.map((school, idx) => (
-            <SchoolCard
-              key={school.school + idx}
-              school={school}
-              route={school.route}
-              routeLoading={school.routeLoading}
-              onSeeRoute={() => { }}
-            />
-          ))}
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-stretch">
+          {results.map((school, idx) => {
+            const colorClasses = [
+              "card-lavender",
+              "card-mint",
+              "card-peach",
+              "card-yellow"
+            ];
+            const colorClass = colorClasses[idx % colorClasses.length];
+            return (
+              <SchoolCard
+                key={school.school + idx}
+                school={school}
+                route={school.route}
+                routeLoading={school.routeLoading}
+                onSeeRoute={() => { }}
+                colorClass={colorClass}
+              />
+            );
+          })}
         </div>
       </section>
+      <footer className="w-full flex flex-col items-center mt-16 mb-4">
+        <div className="text-xs text-gray-500 mb-1">© 2024 ShiftEd. All rights reserved.</div>
+        <div className="text-xs text-gray-400 italic mb-1">* Currently for HSE staff only</div>
+        <div className="mt-1 flex gap-3 text-xs text-gray-400">
+          <a href="https://github.com/aakash414/shifted" target="_blank" rel="noopener noreferrer" className="hover:underline">Project on GitHub</a>
+          {/* <span>™ ShiftEd is a trademark of [Your Name/Org]</span> */}
+        </div>
+      </footer>
     </main>
   );
 }

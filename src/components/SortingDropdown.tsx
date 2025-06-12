@@ -15,7 +15,8 @@ export function SortingDropdown({ value, onChange }: SortingDropdownProps) {
         id="sort-dropdown"
         value={value}
         onChange={e => onChange(e.target.value as SortOption)}
-        className="border rounded px-2 py-1 text-sm"
+        className="border rounded px-2 py-1 text-sm pastel-bg-yellow animate-scale-in"
+        style={{ boxShadow: '0 2px 8px 0 rgba(60,60,120,0.04)' }}
       >
         <option value="score">Best Score</option>
         <option value="time">Shortest Time</option>

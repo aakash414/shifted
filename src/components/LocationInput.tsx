@@ -95,7 +95,8 @@ export function LocationInput({ value, onChange, label = "Your Current Location"
         value={value}
         onChange={handleInputChange}
         placeholder={placeholder}
-        className="border rounded px-2 py-1"
+        className="border rounded px-2 py-1 pastel-bg-blue"
+        style={{ boxShadow: '0 2px 8px 0 rgba(60,60,120,0.04)' }}
         autoComplete="off"
         disabled={disabled}
         onFocus={() => value.length > 2 && suggestions.length > 0 && setShowDropdown(true)}
@@ -103,13 +104,13 @@ export function LocationInput({ value, onChange, label = "Your Current Location"
       />
       {showDropdown && suggestions.length > 0 && (
         <ul
-          className="absolute z-20 bg-white border border-gray-300 rounded shadow-lg mt-1 w-full max-h-48 overflow-auto"
+          className="absolute z-20 custom-dropdown animate-fade-in mt-1 w-full max-h-48 overflow-auto"
           onMouseDown={e => e.preventDefault()} // Prevent input blur on click
         >
           {suggestions.map((s, i) => (
             <li
               key={s.display_name + i}
-              className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+              className="px-3 py-2 hover:bg-pastel-pink cursor-pointer text-sm rounded-xl"
               onMouseDown={() => handleSuggestionClick(s)}
             >
               {s.display_name}
